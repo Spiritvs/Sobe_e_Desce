@@ -33,13 +33,22 @@
 }
 
 
-#novosJogadores > .imgs {
-  vertical-align: middle;
-}
-
 #banner {
 	width: 100%;
 	height: auto;
+}
+
+.nome{
+	background-color: #f86049;
+	padding-top:20%;
+	padding-bottom:20%;
+}
+
+.dinheiro{
+	background-color: #107bb3;
+	padding-top:15%;
+	padding-bottom:15%;
+	font-size: 12px;
 }
 
 #novosJogadores {
@@ -69,6 +78,7 @@
 	height: auto;
 	background-color: #afcc12;
 	text-align: center;
+	overflow:hidden;
 }
 
 #novoJogo {

@@ -15,16 +15,29 @@ var dinheiro = [];
 var dim;
 //Dimensão das Divs
 
-document.addEventListener("deviceready", onDeviceReady, false);
+$(document).ready(function() {
+	document.addEventListener("orientationchange", onOrientation, false);
+});
+
 
 function onDeviceReady() {
 	dim = document.getElementById('novosJogadores').offsetWidth;
 	document.getElementById('novosJogadores').setAttribute("style", "height:" + dim + "px");
 	document.getElementById('fimJogo').setAttribute("style", "height:" + dim + "px");
 	document.getElementById('topContainer').setAttribute("style", "height:" + dim + "px");
+	document.addEventListener("orientationchange", onOrientation, false);
 }
 
+function onOrientation(){
+	alert("lol");
+	dim = document.getElementById('novosJogadores').offsetWidth;
+	document.getElementById('novosJogadores').setAttribute("style", "height:" + dim + "px");
+	document.getElementById('fimJogo').setAttribute("style", "height:" + dim + "px");
+	document.getElementById('topContainer').setAttribute("style", "height:" + dim + "px");
+};
+
 function teste() {
+	alert("lol");
 	var div = document.createElement('div');
 	div.setAttribute("id", "teste");
 	document.getElementById("body").appendChild(div);
@@ -122,16 +135,27 @@ function fimJogada() {
 	for (var i = 1; i <= nJogadores; i++) {
 		if (pontos[i] <= 0) {
 			var div = document.createElement('div');
+			var divContas = document.createElement('div');
 			var img = document.createElement('img');
+			var imgContas = document.createElement('img');
 			var text = document.createTextNode('Jogar de Novo?');
-			img.src = "imgs/1389227658_checkmark-24.png";
-			img.setAttribute("style", "width:25%; height 50%; margin-left:37.5%; margin-top:7.5%; display: block;");
+			var textContas = document.createTextNode('Fazer Contas?');
+			img.src = "imgs/1389403560_checkround-24.png";
+			img.setAttribute("class", "imgs");
+			imgContas.src = "imgs/1389403619_51.png";
+			imgContas.setAttribute("class", "imgs");
 			div.setAttribute("id", "novoJogo");
 			div.setAttribute("style", "height:" + dim + "px");
-			div.setAttribute("onClick", "novoJogo()");
+			div.setAttribute("onclick", "novoJogo()");
+			divContas.setAttribute("id", "contas");
+			divContas.setAttribute("style", "height:" + dim + "px");
+			divContas.setAttribute("onclick", "contas()");
 			div.appendChild(img);
 			div.appendChild(text);
+			divContas.appendChild(imgContas);
+			divContas.appendChild(textContas);
 			document.getElementById('bottomContainer').appendChild(div);
+			document.getElementById('bottomContainer').appendChild(divContas);
 			calculos();
 			return;
 		};

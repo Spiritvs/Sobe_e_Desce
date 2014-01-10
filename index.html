@@ -4,25 +4,32 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" charset="utf-8" src="jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="jquery.mobile.custom.min.js"></script>
 		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 		<script type="text/javascript" charset="utf-8" src="index.js"></script>
 		<link href="style.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body id="body">
-    <div id="banner">
-    <p>Sobe e Desce</p>
-    </div>
-    <div id="topContainer">
-     <div id="novosJogadores" onClick="inserirDados()">
-    	<img class="imgs" src="imgs/1389225050_man-24.png"/>
-    	Novo Jogo
-    	</div>
-    <div id="fimJogo" onClick="fimJogada()">
-    	<img class="imgs" src="imgs/1389225079_new-24.png"/>
-    	Fim da Jogada
-    	</div>
-        </div>
-		<div id="midContainer"></div>
-		<div id="bottomContainer"></div>
+		<div id="banner">
+			<p>
+				Sobe e Desce
+			</p>
+		</div>
+		<div id="topContainer">
+			<div id="novosJogadores" onclick="inserirDados()">
+				<img class="imgs" src="imgs/1389225050_man-24.png"/>
+				Novo Jogo
+			</div>
+			<div id="fimJogo" onclick="fimJogada()">
+				<img class="imgs" src="imgs/1389225079_new-24.png"/>
+				Fim da Jogada
+			</div>
+		</div>
+		<div id="midContainer">
+			
+		</div>
+		<div id="bottomContainer">
+		</div>
 	</body>
 </html>

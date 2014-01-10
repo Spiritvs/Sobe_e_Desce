@@ -17,7 +17,7 @@
         Ricardo Sá
     </author>
 	
-	<preference name="orientation" value="portrait" />
+	<preference name="orientation" value="default" />
 	<preference name="fullscreen" value="true" />
 	
 	<icon src="imgs/1389225079_new-24.png" />

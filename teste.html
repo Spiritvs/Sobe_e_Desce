@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<title>Teste</title>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+	</head>
+	<body onload="load()">
+		<p id="jquery">Click Me Jquery!</p>
+		<p id="javascript">Click Me JavaScript!</p>
+		<script>
+			function load(){
+				$("#jquery").on("tap", jquery );
+				document.getElementById("javascript").addEventListener("tap",javascript);
+			}
+			
+			function jquery() {
+				alert("Função Jquery a Funcionar!");
+			}
+
+			function javascript() {
+				alert("Função JavaScript a Funcionar!");
+			}
+		</script>
+	</body>
+</html>

@@ -15,26 +15,31 @@ var dinheiro = [];
 var dim;
 //Dimensão das Divs
 
-$(document).ready(function() {
-	document.addEventListener("orientationchange", onOrientation, false);
-});
+document.addEventListener("deviceready", onDeviceReady, false);
+window.addEventListener('orientationchange', doOnOrientationChange);
+
+function size(){
+				dim = document.getElementById('novosJogadores').offsetWidth;
+			document.getElementById('novosJogadores').setAttribute("style", "height:" + dim + "px");
+			document.getElementById('fimJogo').setAttribute("style", "height:" + dim + "px");
+			document.getElementById('topContainer').setAttribute("style", "height:" + dim + "px");
+}
+function doOnOrientationChange() {
+	switch(window.orientation) {
+		case -90:
+		case 90:
+			size();
+			break;
+		default:
+			size();
+			break;
+	}
+}
 
 
 function onDeviceReady() {
-	dim = document.getElementById('novosJogadores').offsetWidth;
-	document.getElementById('novosJogadores').setAttribute("style", "height:" + dim + "px");
-	document.getElementById('fimJogo').setAttribute("style", "height:" + dim + "px");
-	document.getElementById('topContainer').setAttribute("style", "height:" + dim + "px");
-	document.addEventListener("orientationchange", teste, false);
+size();
 }
-
-function onOrientation(){
-	alert("lol");
-	dim = document.getElementById('novosJogadores').offsetWidth;
-	document.getElementById('novosJogadores').setAttribute("style", "height:" + dim + "px");
-	document.getElementById('fimJogo').setAttribute("style", "height:" + dim + "px");
-	document.getElementById('topContainer').setAttribute("style", "height:" + dim + "px");
-};
 
 function teste() {
 	alert("lol");
@@ -82,7 +87,7 @@ function inserirDados() {
 
 			var din = document.createElement("div");
 			din.setAttribute("class", "dinheiro");
-			din.setAttribute("id","dinheiro"+i);
+			din.setAttribute("id", "dinheiro" + i);
 			dinheiro[i] = 0;
 			din.innerHTML = "$:" + dinheiro[i];
 			div.appendChild(din);
@@ -98,10 +103,14 @@ function inserirDados() {
 
 function fimJogada() {
 	for (var i = 1; i <= nJogadores; i++) {
-		if(pontos[i]<=0){return;}
+		if (pontos[i] <= 0) {
+			return;
+		}
 	}
 	for (var i = 1; i <= nJogadores; i++) {
-		if(pontos[i]<=0){break;}
+		if (pontos[i] <= 0) {
+			break;
+		}
 		soma = prompt("Quantas vazas fez o " + nomes[i] + "?");
 		if (soma) {
 			if (isNaN(soma)) {
@@ -162,19 +171,18 @@ function fimJogada() {
 	}
 }
 
-function calculos(){
-	for (var i = 1; i <= nJogadores; i++){
-		if(pontos[i]<=0){
-			pontos[i]=0;
+function calculos() {
+	for (var i = 1; i <= nJogadores; i++) {
+		if (pontos[i] <= 0) {
+			pontos[i] = 0;
 			var aux = i;
-			for (var j = 1; j <= nJogadores; j++){
-				dinheiro[aux]+=pontos[j];
-				}		
+			for (var j = 1; j <= nJogadores; j++) {
+				dinheiro[aux] += pontos[j];
 			}
-		else{
-			dinheiro[i]-=pontos[i];
+		} else {
+			dinheiro[i] -= pontos[i];
 		}
-	document.getElementById('dinheiro'+i).innerHTML = "$:" + dinheiro[i];
+		document.getElementById('dinheiro' + i).innerHTML = "$:" + dinheiro[i];
 	}
 }
 
@@ -202,7 +210,7 @@ function novoJogo() {
 
 		var din = document.createElement("div");
 		din.setAttribute("class", "dinheiro");
-		din.setAttribute("id","dinheiro"+i);
+		din.setAttribute("id", "dinheiro" + i);
 		din.innerHTML = "$:" + dinheiro[i];
 		div.appendChild(din);
 

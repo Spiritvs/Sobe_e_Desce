@@ -108,9 +108,28 @@
 
 /* Tamanho das Fonts */
 
-#body {	font-size: 38px;}
+#body {	font-size: 12px;}
 .nome, .dinheiro, .jogadores{font-size: 10px;}
 
+@media (max-width: 1200px) {
+#body { font-size: 30px; }
+.nome, .dinheiro, .jogadores{font-size: 28px;}
+}
+
+@media (max-width: 1000px) {
+#body { font-size: 26px; }
+.nome, .dinheiro, .jogadores{font-size: 24px;}
+}
+
+@media (max-width: 800px) {
+#body { font-size: 22px; }
+.nome, .dinheiro, .jogadores{font-size: 20px;}
+}
+
+@media (max-width: 600px) {
+#body { font-size: 18px; }
+.nome, .dinheiro, .jogadores{font-size: 16px;}
+}
 @media (max-width: 500px) {
 #body { font-size: 16px; }
 .nome, .dinheiro, .jogadores{font-size: 14px;}

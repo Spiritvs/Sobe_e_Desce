@@ -25,7 +25,7 @@ function onDeviceReady() {
 	document.getElementById('novosJogadores').setAttribute("style", "height:" + dim + "px");
 	document.getElementById('fimJogo').setAttribute("style", "height:" + dim + "px");
 	document.getElementById('topContainer').setAttribute("style", "height:" + dim + "px");
-	document.addEventListener("orientationchange", onOrientation, false);
+	document.addEventListener("orientationchange", teste, false);
 }
 
 function onOrientation(){
